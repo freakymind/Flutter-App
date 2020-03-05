@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import './app_screens//home_screen.dart';
+
 //import 'package:flutter_app/app_screens/first_screen.dart';
 
 // void main() => runApp(MyClass());
@@ -19,10 +20,8 @@ import './app_screens//home_screen.dart';
 //   }
 // }
 
-void main () => runApp(
-  MaterialApp(
-    debugShowCheckedModeBanner: false,
-    title : "Exploring UI widgets",
-    home : Home()
-  )
-);
+void main() => runApp(MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: "Exploring UI widgets",
+      home: Home(),
+    ));
