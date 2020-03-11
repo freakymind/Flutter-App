@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import './login_form.dart';
 import 'package:flutter_app/widgets/user_register.dart';
 
 class Home extends StatelessWidget {
@@ -15,20 +16,6 @@ class Home extends StatelessWidget {
               child: LogoImage(),
             ),
           ),
-          //   child: Container(
-          //   alignment: Alignment.center,
-          //   color: Colors.white,
-          //   //height: 250.0,
-          //   //width: 400.0,
-          //   //margin: EdgeInsets.only(bottom: 300.0),
-          //   child: Text("Go Pharma",
-          //       textDirection: TextDirection.ltr,
-          //       style: TextStyle(
-          //           color: Colors.blueAccent,
-          //           fontFamily: 'RobotoSlab',
-          //           fontSize: 50.0,
-          //           decoration: TextDecoration.none)),
-          // )),
           Expanded(
             child: Column(
               children: <Widget>[
@@ -37,23 +24,6 @@ class Home extends StatelessWidget {
                     alignment: Alignment.center,
                     color: Colors.blueAccent,
                     child: LoginButton(),
-                    //height: 250.0,
-                    //width: 400.0,
-                    //margin: EdgeInsets.only(bottom: 300.0),
-                    // child: Text("Go Pharma",
-                    //     textDirection: TextDirection.ltr,
-                    //     style: TextStyle(
-                    //         color: Colors.blueAccent,
-                    //         fontFamily: 'RobotoSlab',
-                    //         fontSize: 50.0,
-                    //         decoration: TextDecoration.none)),
-                  ),
-                ),
-                Expanded(
-                  child: Container(
-                    alignment: Alignment.center,
-                    color: Colors.blueAccent,
-                    child: SignUpButton(),
                   ),
                 ),
               ],
