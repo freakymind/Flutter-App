@@ -22,7 +22,7 @@ class UserRegWidgetState extends State<UserRegisterWidget> {
 
   @override
   Widget build(BuildContext context) {
-    print('User Widget page !');
+    // print('User Widget page !');
     return MaterialApp(
       title: "User Register Form!",
       home: Scaffold(
@@ -33,24 +33,24 @@ class UserRegWidgetState extends State<UserRegisterWidget> {
           margin: const EdgeInsets.only(left: 8.0, right: 8.0),
           child: Column(
             children: <Widget>[
-              new TextField(
+              new TextFormField(
                 controller: companyname,
                 decoration: InputDecoration(
                     // border: OutlineInputBorder(),
                     hintText: "Company Name",
                     labelText: "Company Name"),
               ),
-              new TextField(
+              new TextFormField(
                 controller: companyemail,
                 decoration: InputDecoration(
                     hintText: "Company Email", labelText: "Company Email"),
               ),
-              new TextField(
+              new TextFormField(
                 controller: companymobile,
                 decoration: InputDecoration(
                     hintText: "Company Mobile", labelText: "Company Mobile"),
               ),
-              new TextField(
+              new TextFormField(
                 controller: companyaddress,
                 decoration: InputDecoration(
                     hintText: "Company Address", labelText: "Company Address"),
@@ -64,41 +64,40 @@ class UserRegWidgetState extends State<UserRegisterWidget> {
                         title: Text('Enter User Details'),
                       ),
                       body: new Container(
-                        
                         margin: const EdgeInsets.only(left: 8.0, right: 8.0),
                         child: ListView(
                           children: <Widget>[
-                            new TextField(
+                            new TextFormField(
                               controller: username,
                               decoration: InputDecoration(
                                   hintText: "User Name",
                                   labelText: "User Name"),
                             ),
-                            new TextField(
+                            new TextFormField(
                               controller: useremail,
                               decoration: InputDecoration(
                                   hintText: "User Email",
                                   labelText: "User Email"),
                             ),
-                            new TextField(
+                            new TextFormField(
                               controller: usermobile,
                               decoration: InputDecoration(
                                   hintText: "User Mobile",
                                   labelText: "User Mobile"),
                             ),
-                            new TextField(
+                            new TextFormField(
                               controller: useraddress,
                               decoration: InputDecoration(
                                   hintText: "User Address",
                                   labelText: "User Address"),
                             ),
-                            new TextField(
+                            new TextFormField(
                               controller: usercountry,
                               decoration: InputDecoration(
                                   hintText: "User Country",
                                   labelText: "User Country"),
                             ),
-                            new TextField(
+                            new TextFormField(
                               controller: userpassword,
                               decoration: InputDecoration(
                                   hintText: "User Password",
@@ -121,9 +120,8 @@ class UserRegWidgetState extends State<UserRegisterWidget> {
                                       user_country: usercountry.text,
                                       user_password: userpassword.text);
 
-                                  UserRegister user =
-                                      await RestApis().createUser(userReg);
-                                  print('User Name : ' + user.user_name);
+                                  // UserRegister user =
+                                  await RestApis().createUser(userReg);
                                 },
                                 child: const Text(
                                   'Create User',
