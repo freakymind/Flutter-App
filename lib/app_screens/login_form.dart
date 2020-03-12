@@ -2,6 +2,7 @@ import 'dart:async';
 import 'dart:convert';
 import 'package:flutter_app/widgets/user_register.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
+import './dashboard.dart';
 import 'package:http/http.dart' as http;
 
 import 'package:flutter/material.dart';
@@ -15,8 +16,8 @@ class LoginForm extends StatefulWidget {
 }
 
 class LoginState extends State<LoginForm> {
-  var _email = null;
-  var _password = null;
+  String _email = "";
+  String _password = "";
 
   final _emailCon = TextEditingController();
   final _passWdCon = TextEditingController();
@@ -30,8 +31,12 @@ class LoginState extends State<LoginForm> {
   }
 
   var _client = http.Client();
-  var _body = {};
-  var _url = "http://192.168.2.145:3000/service/login";
+  //var _body = {};
+  var _url = "http://" +
+      DotEnv().env['NODE_IP_ADDRESS'] +
+      ":" +
+      DotEnv().env['PORT'] +
+      "/service/login";
   Map<String, String> _headers = {"Content-type": "application/json"};
 
   @override
@@ -71,6 +76,11 @@ class LoginState extends State<LoginForm> {
                 children: <Widget>[
                   TextField(
                     controller: _emailCon,
+                    // onChanged: (newInput) {
+                    //   setState(() {
+                    //     _emailCon.text = newInput;
+                    //   });
+                    // },
                     style: TextStyle(color: Colors.white),
                     decoration: InputDecoration(
                         labelText: 'EMAIL',
@@ -114,21 +124,28 @@ class LoginState extends State<LoginForm> {
                         elevation: 6.0,
                         child: GestureDetector(
                             onTap: () async {
-                              _email = _emailCon.text;
-                              _password = _passWdCon.text;
-
-                              _body["user_id"] = _email;
-                              _body["password"] = _password;
-                              print(_body);
-
+                              _email = _emailCon.text.toString();
+                              _password = _passWdCon.text.toString();
                               try {
-                                var uriRes = await _client.post(_url,
-                                    headers: _headers,
-                                    body: json.encode(_body));
-                                // print(uriRes.body);
-                                // print(uriRes.statusCode);
+                                var uriRes = await authenticate(
+                                    _email.trim(), _password.trim());
+
+                                if (uriRes.statusCode == 200) {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => DashBoard(),
+                                    ),
+                                  );
+                                } else {
+                                  return LoginAlert(context);
+                                }
                               } finally {
-                                _client.close();
+                                //_client.close();
+                                _emailCon.clear();
+                                _passWdCon.clear();
+                                _emailCon.text = '';
+                                _passWdCon.text = '';
                               }
                             },
                             child: Center(
@@ -164,7 +181,8 @@ class LoginState extends State<LoginForm> {
                                 decoration: TextDecoration.underline),
                           ),
                           onTap: () {
-                            print('SignUp pressed');
+                            //print();
+                            //print();
                             Navigator.push(
                               context,
                               MaterialPageRoute(
@@ -184,6 +202,28 @@ class LoginState extends State<LoginForm> {
       ),
     );
   }
+
+  Future<http.Response> authenticate(userId, password) {
+    var _body = {'user_id': userId, 'password': password};
+
+    return _client.post(_url, headers: _headers, body: jsonEncode(_body));
+  }
+
+  void LoginAlert(BuildContext context) {
+    var AlertDailog = AlertDialog(
+      title: Text('Login Failed'),
+      content: Text(
+        'Something Went wrong',
+        style: TextStyle(color: Colors.black, fontSize: 15.0),
+      ),
+    );
+
+    showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return AlertDailog;
+        });
+  }
 }
 
 class LogoImage extends StatelessWidget {
@@ -198,5 +238,19 @@ class LogoImage extends StatelessWidget {
       height: 250.0,
       width: 200.0,
     );
+  }
+}
+
+class Auth {
+  String user_id = '';
+  String password = '';
+
+  Auth(this.user_id, this.password);
+
+  Map<String, dynamic> _toJson() {
+    return <String, dynamic>{
+      'user_id': user_id,
+      'password': password,
+    };
   }
 }

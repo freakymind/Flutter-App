@@ -41,4 +41,3 @@ class RestApis {
     return map;
   }
 }
-
