@@ -1,4 +1,4 @@
-#Thu Mar 12 15:56:37 IST 2020
-base.0=C\:\\Users\\cmurali\\Desktop\\Flutter_App-V2\\Flutter-App\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\out\\classes.dex
+#Thu Mar 12 17:23:45 IST 2020
+base.0=/home/sssahu/Desktop/Dev/My_flutter_proj/Flutter-App/build/app/intermediates/dex/debug/mergeDexDebug/out/classes.dex
 path.0=classes.dex
 renamed.0=classes.dex
