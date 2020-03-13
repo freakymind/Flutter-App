@@ -1,0 +1,13 @@
+This file is to use as quick referrence purpose for flutter development issueses.
+
+1. If app is not running.
+
+A- Wipe out data in AVD emulator. And try to build the app again. Go to andriod studio, select the device, wipe the
+   data and rebuild agin. Make sure you close the emulator before this process.
+
+2. If any gadel build issues?
+
+A- This might for several issue. One main reason would be different file system of different OS. so we have
+   to clean the data rebuild agin.
+   in project folder do "flutter clean" than "flutter packages get"  and go for build. This will recreate 
+   the project again.
