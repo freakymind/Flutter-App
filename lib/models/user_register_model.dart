@@ -1,40 +1,39 @@
 class UserRegister {
-  final String company_name;
-  final String company_email;
-  final String company_address;
-  final String company_mobile;
-
-  final String user_name;
-  final String user_email;
-  final String user_mobile;
-  final String user_address;
-  final String user_country;
-  final String user_password;
+  final String companyname;
+  final String companyemail;
+  final String companyaddress;
+  final String companymobile;
+  final String username;
+  final String useremail;
+  final String usermobile;
+  final String useraddress;
+  final String usercountry;
+  final String userpassword;
 
   UserRegister({
-    this.company_email,
-    this.company_name,
-    this.company_address,
-    this.company_mobile,
-    this.user_name,
-    this.user_email,
-    this.user_mobile,
-    this.user_address,
-    this.user_country,
-    this.user_password,
+    this.companyemail,
+    this.companyname,
+    this.companyaddress,
+    this.companymobile,
+    this.username,
+    this.useremail,
+    this.usermobile,
+    this.useraddress,
+    this.usercountry,
+    this.userpassword,
   });
 
   factory UserRegister.formJson(Map<String, dynamic> json) {
     return UserRegister(
-        company_name: json['company_name'],
-        company_email: json['company_email'],
-        company_address: json['company_address'],
-        company_mobile: json['company_mobile'],
-        user_name: json['user_name'],
-        user_email: json['user_email'],
-        user_password: json['user_password'],
-        user_address: json['user_password'],
-        user_country: json['user_country'],
-        user_mobile: json['user_mobile']);
+        companyname: json['company_name'],
+        companyemail: json['company_email'],
+        companyaddress: json['company_address'],
+        companymobile: json['company_mobile'],
+        username: json['user_name'],
+        useremail: json['user_email'],
+        userpassword: json['user_password'],
+        useraddress: json['user_password'],
+        usercountry: json['user_country'],
+        usermobile: json['user_mobile']);
   }
 }
