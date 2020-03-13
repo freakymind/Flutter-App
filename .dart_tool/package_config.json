@@ -176,6 +176,12 @@
       "languageVersion": "2.0"
     },
     {
+      "name": "validators",
+      "rootUri": "file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/validators-2.0.0+1",
+      "packageUri": "lib/",
+      "languageVersion": "2.0"
+    },
+    {
       "name": "vector_math",
       "rootUri": "file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/vector_math-2.0.8",
       "packageUri": "lib/",
@@ -191,10 +197,10 @@
       "name": "flutter_app",
       "rootUri": "../",
       "packageUri": "lib/",
-      "languageVersion": "2.1"
+      "languageVersion": "2.2"
     }
   ],
-  "generated": "2020-03-12T12:04:05.132462Z",
+  "generated": "2020-03-13T04:58:32.363310Z",
   "generator": "pub",
   "generatorVersion": "2.7.0"
 }

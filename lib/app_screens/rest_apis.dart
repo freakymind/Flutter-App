@@ -6,21 +6,25 @@ class RestApis {
   static final CREATE_USER_URL =
       'http://192.168.3.162:9092/service/registercompany';
 
-  Future<UserRegister> createUser(UserRegister userReg) async {
-    final headers = {'Content-Type': 'application/json'};
-    Map<dynamic, dynamic> mapData = toMap(userReg);
-    String newjson = json.encode(mapData);
-    var response = await http.post(Uri.encodeFull(CREATE_USER_URL),
-        headers: headers, body: newjson);
-    Map<String, dynamic> mapResponse = json.decode(response.body);
-    print('Response mapping data1 : ' + mapResponse.toString());
-    print('Response response data2 : ' + mapResponse['status']);
+  dynamic jsonReqResdata;
 
-    if (response.statusCode == 200 && mapResponse['status'] == "0") {
-      print('inside if condition : ' + mapResponse['status']);
-      return UserRegister.formJson(mapResponse);
-    } else {
-      throw Exception('Registration is Failed');
+  Future<dynamic> createUser(UserRegister userReg) async {
+    try {
+      final headers = {'Content-Type': 'application/json'};
+      Map<dynamic, dynamic> mapData = toMap(userReg);
+      String newjson = json.encode(mapData);
+      var response = await http.post(Uri.encodeFull(CREATE_USER_URL),
+          headers: headers, body: newjson);
+      Map<String, dynamic> mapResponse = json.decode(response.body);
+      jsonReqResdata = mapResponse;
+      if (response.statusCode == 200 && mapResponse['status'] == "0") {
+        print('inside if condition : ' + jsonReqResdata.toString());
+        return jsonReqResdata;
+      } else if (mapResponse['status'] == "1") {
+        return jsonReqResdata;
+      }
+    } catch (e) {
+      throw e.toString();
     }
   }
 
@@ -36,7 +40,6 @@ class RestApis {
     map['user_mobile'] = userReg.user_mobile;
     map['user_password'] = userReg.user_password;
     map['user_country'] = userReg.user_country;
-
     return map;
   }
 }
