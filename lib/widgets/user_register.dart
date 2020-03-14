@@ -37,7 +37,9 @@ class UserRegWidgetState extends State<UserRegisterWidget> {
           key: regFormkey,
           child: ListView(
             children: <Widget>[
-              new Container(
+              Container(
+                padding: EdgeInsets.only(
+                    top: 0.0, left: 25.0, right: 25.0, bottom: 0.0),
                 color: Colors.white,
                 child: new TextFormField(
                   controller: companyname,
@@ -57,7 +59,9 @@ class UserRegWidgetState extends State<UserRegisterWidget> {
                   },
                 ),
               ),
-              new Container(
+              Container(
+                padding: EdgeInsets.only(
+                    top: 0.0, left: 25.0, right: 25.0, bottom: 0.0),
                 child: new TextFormField(
                   controller: companyemail,
                   keyboardType: TextInputType.emailAddress,
@@ -78,7 +82,9 @@ class UserRegWidgetState extends State<UserRegisterWidget> {
                   },
                 ),
               ),
-              new Container(
+              Container(
+                padding: EdgeInsets.only(
+                    top: 0.0, left: 25.0, right: 25.0, bottom: 0.0),
                 child: new TextFormField(
                   controller: companymobile,
                   keyboardType: TextInputType.phone,
@@ -102,7 +108,9 @@ class UserRegWidgetState extends State<UserRegisterWidget> {
                   },
                 ),
               ),
-              new Container(
+              Container(
+                padding: EdgeInsets.only(
+                    top: 0.0, left: 25.0, right: 25.0, bottom: 0.0),
                 child: new TextFormField(
                   controller: companyaddress,
                   decoration: InputDecoration(
@@ -136,112 +144,155 @@ class UserRegWidgetState extends State<UserRegisterWidget> {
                               key: userFormkey,
                               child: ListView(
                                 children: <Widget>[
-                                  new TextFormField(
-                                    controller: username,
-                                    decoration: InputDecoration(
-                                        suffixIcon: Icon(
-                                          Icons.person,
-                                          color: Colors.black,
-                                        ),
-                                        hintText: "User Name",
-                                        labelText: "User Name"),
-                                    validator: (String value) {
-                                      if (value.isEmpty) {
-                                        return 'Enter user name';
-                                      }
-                                      return null;
-                                    },
+                                  Container(
+                                    padding: EdgeInsets.only(
+                                        top: 0.0,
+                                        left: 25.0,
+                                        right: 25.0,
+                                        bottom: 0.0),
+                                    child: new TextFormField(
+                                      controller: username,
+                                      decoration: InputDecoration(
+                                          suffixIcon: Icon(
+                                            Icons.person,
+                                            color: Colors.black,
+                                          ),
+                                          hintText: "User Name",
+                                          labelText: "User Name"),
+                                      validator: (String value) {
+                                        if (value.isEmpty) {
+                                          return 'Enter user name';
+                                        }
+                                        return null;
+                                      },
+                                    ),
                                   ),
-                                  new TextFormField(
-                                    controller: useremail,
-                                    keyboardType: TextInputType.emailAddress,
-                                    decoration: InputDecoration(
-                                        suffixIcon: Icon(
-                                          Icons.contact_mail,
-                                          color: Colors.black,
-                                        ),
-                                        hintText: "User Email",
-                                        labelText: "User Email"),
-                                    validator: (String value) {
-                                      if (value.isEmpty) {
-                                        return 'Enter user email';
-                                      } else if (!isEmail(value)) {
-                                        return 'Enter a valid email';
-                                      }
-                                      return null;
-                                    },
+                                  Container(
+                                    padding: EdgeInsets.only(
+                                        top: 0.0,
+                                        left: 25.0,
+                                        right: 25.0,
+                                        bottom: 0.0),
+                                    child: new TextFormField(
+                                      controller: useremail,
+                                      keyboardType: TextInputType.emailAddress,
+                                      decoration: InputDecoration(
+                                          suffixIcon: Icon(
+                                            Icons.contact_mail,
+                                            color: Colors.black,
+                                          ),
+                                          hintText: "User Email",
+                                          labelText: "User Email"),
+                                      validator: (String value) {
+                                        if (value.isEmpty) {
+                                          return 'Enter user email';
+                                        } else if (!isEmail(value)) {
+                                          return 'Enter a valid email';
+                                        }
+                                        return null;
+                                      },
+                                    ),
                                   ),
-                                  new TextFormField(
-                                    controller: usermobile,
-                                    keyboardType: TextInputType.phone,
-                                    inputFormatters: <TextInputFormatter>[
-                                      WhitelistingTextInputFormatter.digitsOnly
-                                    ],
-                                    decoration: InputDecoration(
-                                        suffixIcon: Icon(
-                                          Icons.phone_android,
-                                          color: Colors.black,
-                                        ),
-                                        hintText: "User Mobile",
-                                        labelText: "User Mobile"),
-                                    validator: (String value) {
-                                      if (value.isEmpty) {
-                                        return 'Enter user mobile number';
-                                      } else if (value.length < 10 ||
-                                          value.length > 10) {
-                                        return 'Enter valid mobile number';
-                                      }
-                                      return null;
-                                    },
+                                  Container(
+                                    padding: EdgeInsets.only(
+                                        top: 0.0,
+                                        left: 25.0,
+                                        right: 25.0,
+                                        bottom: 0.0),
+                                    child: new TextFormField(
+                                      controller: usermobile,
+                                      keyboardType: TextInputType.phone,
+                                      inputFormatters: <TextInputFormatter>[
+                                        WhitelistingTextInputFormatter
+                                            .digitsOnly
+                                      ],
+                                      decoration: InputDecoration(
+                                          suffixIcon: Icon(
+                                            Icons.phone_android,
+                                            color: Colors.black,
+                                          ),
+                                          hintText: "User Mobile",
+                                          labelText: "User Mobile"),
+                                      validator: (String value) {
+                                        if (value.isEmpty) {
+                                          return 'Enter user mobile number';
+                                        } else if (value.length < 10 ||
+                                            value.length > 10) {
+                                          return 'Enter valid mobile number';
+                                        }
+                                        return null;
+                                      },
+                                    ),
                                   ),
-                                  new TextFormField(
-                                    controller: useraddress,
-                                    decoration: InputDecoration(
-                                        suffixIcon: Icon(
-                                          Icons.home,
-                                          color: Colors.black,
-                                        ),
-                                        hintText: "User Address",
-                                        labelText: "User Address"),
-                                    validator: (String value) {
-                                      if (value.isEmpty) {
-                                        return 'Enter user address';
-                                      }
-                                      return null;
-                                    },
+                                  Container(
+                                    padding: EdgeInsets.only(
+                                        top: 0.0,
+                                        left: 25.0,
+                                        right: 25.0,
+                                        bottom: 0.0),
+                                    child: new TextFormField(
+                                      controller: useraddress,
+                                      decoration: InputDecoration(
+                                          suffixIcon: Icon(
+                                            Icons.home,
+                                            color: Colors.black,
+                                          ),
+                                          hintText: "User Address",
+                                          labelText: "User Address"),
+                                      validator: (String value) {
+                                        if (value.isEmpty) {
+                                          return 'Enter user address';
+                                        }
+                                        return null;
+                                      },
+                                    ),
                                   ),
-                                  new TextFormField(
-                                    controller: usercountry,
-                                    decoration: InputDecoration(
-                                        suffixIcon: Icon(
-                                          Icons.location_city,
-                                          color: Colors.black,
-                                        ),
-                                        hintText: "User Country",
-                                        labelText: "User Country"),
-                                    validator: (String value) {
-                                      if (value.isEmpty) {
-                                        return 'Enter user country';
-                                      }
-                                      return null;
-                                    },
+                                  Container(
+                                    padding: EdgeInsets.only(
+                                        top: 0.0,
+                                        left: 25.0,
+                                        right: 25.0,
+                                        bottom: 0.0),
+                                    child: new TextFormField(
+                                      controller: usercountry,
+                                      decoration: InputDecoration(
+                                          suffixIcon: Icon(
+                                            Icons.location_city,
+                                            color: Colors.black,
+                                          ),
+                                          hintText: "User Country",
+                                          labelText: "User Country"),
+                                      validator: (String value) {
+                                        if (value.isEmpty) {
+                                          return 'Enter user country';
+                                        }
+                                        return null;
+                                      },
+                                    ),
                                   ),
-                                  new TextFormField(
-                                    controller: userpassword,
-                                    obscureText: true,
-                                    decoration: InputDecoration(
-                                        suffixIcon: Icon(
-                                          Icons.lock,
-                                          color: Colors.black,
-                                        ),
-                                        hintText: "User Password",
-                                        labelText: "User Password"),
-                                    validator: (String value) {
-                                      if (value.isEmpty) {
-                                        return 'Enter password';
-                                      }
-                                      return null;
-                                    },
+                                  Container(
+                                    padding: EdgeInsets.only(
+                                        top: 0.0,
+                                        left: 25.0,
+                                        right: 25.0,
+                                        bottom: 0.0),
+                                    child: new TextFormField(
+                                      controller: userpassword,
+                                      obscureText: true,
+                                      decoration: InputDecoration(
+                                          suffixIcon: Icon(
+                                            Icons.lock,
+                                            color: Colors.black,
+                                          ),
+                                          hintText: "User Password",
+                                          labelText: "User Password"),
+                                      validator: (String value) {
+                                        if (value.isEmpty) {
+                                          return 'Enter password';
+                                        }
+                                        return null;
+                                      },
+                                    ),
                                   ),
                                   Container(
                                     padding: EdgeInsets.only(
