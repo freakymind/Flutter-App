@@ -1,6 +1,6 @@
 import 'dart:async';
 import 'dart:convert';
-import 'package:flutter_app/widgets/user_register.dart';
+//import 'package:flutter_app/widgets/user_register.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import './dashboard.dart';
 import 'package:http/http.dart' as http;
@@ -9,8 +9,7 @@ import 'package:flutter/material.dart';
 
 class LoginForm extends StatefulWidget {
   @override
-  LoginState createState() {
-    // TODO: implement createState
+  LoginState createState() {  
     return LoginState();
   }
 }
@@ -41,7 +40,6 @@ class LoginState extends State<LoginForm> {
 
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return Scaffold(
       backgroundColor: Colors.blueAccent,
       //resizeToAvoidBottomPadding: false,
@@ -186,7 +184,9 @@ class LoginState extends State<LoginForm> {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => UserRegisterWidget(),
+                                builder: (context) => 
+                                //UserRegisterWidget()
+                                DashBoard(),
                               ),
                             );
                           },
@@ -247,7 +247,7 @@ class Auth {
 
   Auth(this.user_id, this.password);
 
-  Map<String, dynamic> _toJson() {
+  Map<String, dynamic> tomap() {
     return <String, dynamic>{
       'user_id': user_id,
       'password': password,

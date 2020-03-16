@@ -1,10 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_app/app_screens/login_form.dart';
+//import 'package:flutter_app/app_screens/login_form.dart';
 import 'package:flutter_app/app_screens/rest_apis.dart';
 import 'package:flutter_app/models/user_register_model.dart';
 import 'package:validators/validators.dart';
+import '../app_screens/dashboard.dart';
 
 class UserRegisterWidget extends StatefulWidget {
   @override
@@ -398,7 +399,9 @@ class UserRegWidgetState extends State<UserRegisterWidget> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => LoginForm(),
+                      builder: (context) => 
+                      //LoginForm(),
+                      DashBoard(),
                     ),
                   );
                 },
