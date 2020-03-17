@@ -5,6 +5,7 @@ import 'package:flutter_app/app_screens/login_form.dart';
 import 'package:flutter_app/app_screens/rest_apis.dart';
 import 'package:flutter_app/models/user_register_model.dart';
 import 'package:validators/validators.dart';
+import '../app_screens/dashboard.dart';
 
 class UserRegisterWidget extends StatefulWidget {
   @override

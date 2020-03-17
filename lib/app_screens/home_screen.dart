@@ -3,8 +3,7 @@ import 'package:flutter_app/widgets/user_register.dart';
 
 class Home extends StatelessWidget {
   @override
-  Widget build(BuildContext context) {
-    // TODO: implement build
+  Widget build(BuildContext context) {   
     return Center(
       child: Column(
         children: <Widget>[
@@ -36,8 +35,7 @@ class Home extends StatelessWidget {
 
 class LogoImage extends StatelessWidget {
   @override
-  Widget build(BuildContext context) {
-    // TODO: implement build
+  Widget build(BuildContext context) {   
     AssetImage assetImage = AssetImage('images/goPharma@4x.png');
     Image image = Image(
       image: assetImage,
@@ -52,8 +50,7 @@ class LogoImage extends StatelessWidget {
 
 class LoginButton extends StatelessWidget {
   @override
-  Widget build(BuildContext context) {
-    // TODO: implement build
+  Widget build(BuildContext context) {    
     return Container(
       margin: EdgeInsets.only(top: 100.0),
       height: 40.0,
