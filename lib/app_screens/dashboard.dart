@@ -24,6 +24,7 @@
 //   }
 // }
 import 'package:flutter/material.dart';
+import 'package:flutter_app/app_screens/assignalot.dart';
 import './product_screen.dart';
 import './distributor.dart';
 import './login_form.dart';
@@ -89,7 +90,7 @@ class DashBoardForm extends State<DashBoard> {
             child: Row(
           mainAxisAlignment: MainAxisAlignment.start,
           children: <Widget>[
-            _iconWidget("Assign LOT", Icons.account_box, Colors.blueAccent,DistributorForm()),
+            _iconWidget("Assign LOT", Icons.account_box, Colors.blueAccent,AssignLot()),
             _iconWidget("Add Distributor", Icons.person_add, Colors.redAccent,DistributorForm()),
             _iconWidget("Add Product", Icons.playlist_add, Colors.orangeAccent,ProductScreen())
           ],
