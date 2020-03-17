@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-//import 'package:flutter_app/app_screens/login_form.dart';
+import 'package:flutter_app/app_screens/login_form.dart';
 import 'package:flutter_app/app_screens/rest_apis.dart';
 import 'package:flutter_app/models/user_register_model.dart';
 import 'package:validators/validators.dart';
@@ -400,8 +400,8 @@ class UserRegWidgetState extends State<UserRegisterWidget> {
                     context,
                     MaterialPageRoute(
                       builder: (context) => 
-                      //LoginForm(),
-                      DashBoard(),
+                      //LoginForm()
+                      DashBoard(),                     
                     ),
                   );
                 },

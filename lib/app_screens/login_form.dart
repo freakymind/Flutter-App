@@ -1,6 +1,6 @@
 import 'dart:async';
 import 'dart:convert';
-//import 'package:flutter_app/widgets/user_register.dart';
+import 'package:flutter_app/widgets/user_register.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import './dashboard.dart';
 import 'package:http/http.dart' as http;
@@ -185,8 +185,8 @@ class LoginState extends State<LoginForm> {
                               context,
                               MaterialPageRoute(
                                 builder: (context) => 
-                                //UserRegisterWidget()
-                                DashBoard(),
+                               UserRegisterWidget()
+                               ,
                               ),
                             );
                           },

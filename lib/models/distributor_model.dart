@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
-
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 class PostRequest {
   final String name;
   final String email;
@@ -34,7 +34,11 @@ class PostRequest {
 
   static Future<dynamic> createRequest({Map body}) async {
     final String url =
-        'http://192.168.2.189:3000/service/distributor/addDistributor';
+       // 'http://192.168.2.189:3000/service/distributor/addDistributor';
+       "http://" +
+      DotEnv().env['NODE_IP_ADDRESS'] +
+      ":" +
+      DotEnv().env['PORT'] +"/service/distributor/addDistributor";
     // Map<String, String> dataBody = {"name": name, "salary": salary, "age": age};
     var jsonData = json.encode(body);
     print(body);

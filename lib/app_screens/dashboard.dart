@@ -26,6 +26,7 @@
 import 'package:flutter/material.dart';
 import './product_screen.dart';
 import './distributor.dart';
+import './login_form.dart';
 
 class DashBoard extends StatefulWidget {
   @override
@@ -98,10 +99,11 @@ class DashBoardForm extends State<DashBoard> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         title: Row(
           mainAxisAlignment: MainAxisAlignment.start,
           children: <Widget>[
-            Container(width: 50, child: Icon(Icons.menu, color: Colors.white)),
+            Container(width:50, child: Icon(Icons.menu, color: Colors.white)),
             Text("Dashboard",
                 textDirection: TextDirection.ltr,
                 style: TextStyle(
@@ -110,22 +112,29 @@ class DashBoardForm extends State<DashBoard> {
                   fontWeight: FontWeight.bold,
                 )),
             Container(
+              margin: EdgeInsets.only(left:130),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: <Widget>[
                   Container(
-                    child: Icon(
-                      Icons.email,
+                    child:IconButton(icon:Icon(
+                      Icons.close,
                       color: Colors.white,
-                      size: 24.0,
+                      size: 24.0,                                       
                     ),
+                    onPressed: () =>  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => LoginForm()),
+                  ),)
+                 
                   )
                 ],
               ),
-              width: 170,
+              width: 50,
             ),
           ],
         ),
+        //leading: new Container(),
       ),
       body: Container(
         child: Stack(
