@@ -75,9 +75,10 @@ class UserRegWidgetState extends State<UserRegisterWidget> {
                   validator: (String value) {
                     if (value.isEmpty) {
                       return 'Enter compnay email';
-                    } else if (!isEmail(value)) {
-                      return 'Enter a valid email';
                     }
+                    //  else if (!isEmail(value)) {
+                    //   return 'Enter a valid email';
+                    // }
                     return null;
                   },
                 ),
@@ -186,9 +187,11 @@ class UserRegWidgetState extends State<UserRegisterWidget> {
                                       validator: (String value) {
                                         if (value.isEmpty) {
                                           return 'Enter user email';
-                                        } else if (!isEmail(value)) {
-                                          return 'Enter a valid email';
                                         }
+
+                                        // else if (!isEmail(value)) {
+                                        //   return 'Enter a valid email';
+                                        // }
                                         return null;
                                       },
                                     ),
@@ -323,6 +326,7 @@ class UserRegWidgetState extends State<UserRegisterWidget> {
                                           RestApis()
                                               .createUser(userReg)
                                               .then((msg) {
+                                            // print('Return data :: '+ msg.toString());
                                             showAlert(context, msg['status'],
                                                 msg['message']);
                                           });
