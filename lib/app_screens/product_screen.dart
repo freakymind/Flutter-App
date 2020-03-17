@@ -54,7 +54,7 @@ class ProjectScreenState extends State<ProductScreen>{
                   ),
                   onTap: () => {Navigator.of(context).pop()},
                   trailing: IconButton(
-                      icon: Icon(Icons.arrow_forward), onPressed: () {},
+                      icon: Icon(Icons.arrow_forward),
                       // onPressed: () => {Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context)=>ProductList))}
                       ),
                 ),
@@ -68,14 +68,14 @@ class ProjectScreenState extends State<ProductScreen>{
                     title: Text('Distributors'),
                     onTap: () => {Navigator.pop(context)},
                     trailing: IconButton(
-                        icon: Icon(Icons.arrow_forward), onPressed: () {},
+                        icon: Icon(Icons.arrow_forward),
                         // onPressed: () => {Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context)=>ProductList))}
                         )),
                 ListTile(
                   title: Text('Close'),
                   onTap: () => {Navigator.pop(context)},
                   trailing: IconButton(
-                      icon: Icon(Icons.close),onPressed: () {},
+                      icon: Icon(Icons.close),
                        // onPressed: () => {Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context)=>ProductList))}
                       ),
                 )
@@ -105,7 +105,6 @@ class ProjectScreenState extends State<ProductScreen>{
                             } else if (value.length < 3) {
                               return 'please enter atleast 3 characters';
                             }
-                             return null;
                           },
                           onSaved: (value) {
                             productname = value;
@@ -125,7 +124,6 @@ class ProjectScreenState extends State<ProductScreen>{
                             if (value.isEmpty) {
                               return 'please enter brand';
                             }
-                             return null;
                           },
                           onSaved: (value) {
                             brand = value;
@@ -145,8 +143,7 @@ class ProjectScreenState extends State<ProductScreen>{
                           validator: (value) {
                             if (value.isEmpty) {
                               return 'please enter the dimensions of product';
-                            } 
-                            return null;
+                            }
                           },
                           onSaved: (value) {
                             dimensions = value;
@@ -179,7 +176,6 @@ class ProjectScreenState extends State<ProductScreen>{
                             if (value.isEmpty) {
                               return 'Please select one country';
                             }
-                             return null;
                           },
                           onSaved: (value) {
                             countrycodevalue = value;
@@ -213,7 +209,6 @@ class ProjectScreenState extends State<ProductScreen>{
                               if (value.isEmpty) {
                                 return 'Please select one model';
                               }
-                               return null;
                             }),
                         SizedBox(height: 5),
                         TextFormField(
@@ -230,7 +225,6 @@ class ProjectScreenState extends State<ProductScreen>{
                             if (value.isEmpty) {
                               return 'please enter the dimensions of product';
                             }
-                             return null;
                           },
                           onSaved: (value) {
                             weight = value;
@@ -251,7 +245,6 @@ class ProjectScreenState extends State<ProductScreen>{
                             if (value.isEmpty) {
                               return 'please enter the batch';
                             }
-                             return null;
                           },
                           onSaved: (value) {
                             batch = value;
@@ -272,7 +265,6 @@ class ProjectScreenState extends State<ProductScreen>{
                             if (value.isEmpty) {
                               return 'please enter  batch size';
                             }
-                             return null;
                           },
                           onSaved: (value) {
                             batchsize = value;

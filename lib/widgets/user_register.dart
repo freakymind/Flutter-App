@@ -5,7 +5,6 @@ import 'package:flutter_app/app_screens/login_form.dart';
 import 'package:flutter_app/app_screens/rest_apis.dart';
 import 'package:flutter_app/models/user_register_model.dart';
 import 'package:validators/validators.dart';
-import '../app_screens/dashboard.dart';
 
 class UserRegisterWidget extends StatefulWidget {
   @override
@@ -76,9 +75,10 @@ class UserRegWidgetState extends State<UserRegisterWidget> {
                   validator: (String value) {
                     if (value.isEmpty) {
                       return 'Enter compnay email';
-                    } else if (!isEmail(value)) {
-                      return 'Enter a valid email';
                     }
+                    //  else if (!isEmail(value)) {
+                    //   return 'Enter a valid email';
+                    // }
                     return null;
                   },
                 ),
@@ -187,9 +187,11 @@ class UserRegWidgetState extends State<UserRegisterWidget> {
                                       validator: (String value) {
                                         if (value.isEmpty) {
                                           return 'Enter user email';
-                                        } else if (!isEmail(value)) {
-                                          return 'Enter a valid email';
                                         }
+
+                                        // else if (!isEmail(value)) {
+                                        //   return 'Enter a valid email';
+                                        // }
                                         return null;
                                       },
                                     ),
@@ -324,6 +326,7 @@ class UserRegWidgetState extends State<UserRegisterWidget> {
                                           RestApis()
                                               .createUser(userReg)
                                               .then((msg) {
+                                            // print('Return data :: '+ msg.toString());
                                             showAlert(context, msg['status'],
                                                 msg['message']);
                                           });
